@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration [
+    <!ELEMENT hibernate-configuration (session-factory)>
+    <!ELEMENT session-factory (property*, mapping*)>
+    <!ELEMENT property (#PCDATA)>
+    <!ATTLIST property name CDATA #REQUIRED>
+    <!ELEMENT mapping EMPTY>
+    <!ATTLIST mapping
+        class CDATA #IMPLIED
+        resource CDATA #IMPLIED>
+]>
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <property name="hibernate.connection.driver_class">
+            com.mysql.cj.jdbc.Driver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/studentdb1
+        </property>
+
+        <property name="hibernate.connection.username">
+            root
+        </property>
+
+        <property name="hibernate.connection.password">
+            Fathima_1603
+        </property>
+
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+
+        <property name="hibernate.hbm2ddl.auto">
+            update
+        </property>
+
+        <property name="hibernate.show_sql">
+            true
+        </property>
+
+        <property name="hibernate.format_sql">
+            true
+        </property>
+
+        <mapping class="com.simple.model.Student"/>
+
+    </session-factory>
+
+</hibernate-configuration>
